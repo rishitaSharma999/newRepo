@@ -25,7 +25,7 @@ exports.resetPasswordToken = async (req, res) => {
 		);
 		console.log("DETAILS", updatedDetails);
 
-		const url = `http://localhost:5175/update-password/${token}`;
+		const url = `https://new-repo-front.vercel.app/update-password/${token}`;
 
 		await mailSender(
 			email,
