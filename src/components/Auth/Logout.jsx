@@ -19,7 +19,7 @@ export default function Logout() {
     <Container  >
       <Row>
         <Col>
-          <Card style={{ width: "17rem",margin: "40px auto",padding: "20px", backgroundColor: "rgb(222 220 251)",border: "2px solid #ddd",borderRadius: "10px",boxShadow: "0 0 10px rgba(0, 0, 0, 0.4)" }} className="logout-card">
+          <Card style={{ width: "20rem",margin: "40px auto",padding: "20px", backgroundColor: "rgb(222 220 251)",border: "2px solid #ddd",borderRadius: "10px",boxShadow: "0 0 10px rgba(0, 0, 0, 0.4)" }} className="logout-card">
             <Card.Body className="logout-card-body"  style={{padding: "20px" }} >
               <Card.Title className="logout-card-title" style={{fontSize: "20px",fontWeight: "bold",marginBottom: "10px"}}>You are logged In</Card.Title>
               <Card.Text className="logout-card-text"  style={{ fontSize: "14px",color: "#666" }}>

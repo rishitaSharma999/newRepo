@@ -96,7 +96,7 @@ const Cart = () => {
         </Container>
       ) : (
         <div className="cart-container" key="empty-cart">
-          <Card style={{ width: "18rem" }}>
+          <Card style={{ width: "25rem" }}>
           <Card.Body>
             <Card.Title> Your cart is empty!</Card.Title>
             <NavLink to="/">

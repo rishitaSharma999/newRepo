@@ -69,18 +69,28 @@ const Checkout = () => {
             <Accordion defaultActiveKey="0">
               <Accordion.Item eventKey="0" className="accordion-item" >
                 <Accordion.Header  > Delivery Address</Accordion.Header>
-                <Accordion.Body>
+                <Accordion.Body style={{
+            color: 'rgb(51, 51, 51)',
+            backgroundColor: '#01011b',
+            border: '2px solid rgb(120, 30, 238)'
+          }}>
                   <Form>
                     <Form.Group 
                       className="mb-3 form-group"
                       controlId="exampleForm.ControlInput1"
                     >
                       <Form.Label >Enter Name</Form.Label>
-                      <Form.Control type="name" placeholder="Jane Doe" required value={name} onChange={handleNameChange}  />
+                      <Form.Control type="name" placeholder="Jane Doe" required value={name} onChange={handleNameChange} 
+        style={{
+          color: 'rgb(51, 51, 51)',
+          backgroundColor: 'rgb(223, 219, 249)',
+          border: '2px solid rgb(120, 30, 238)'
+        }}   />
                     </Form.Group>
                     <Form.Group
                       className="mb-3"
                       controlId="exampleForm.ControlTextarea1"
+                      
                     >
                       <Form.Label>Enter Address</Form.Label>
                       <Form.Control
@@ -89,6 +99,12 @@ const Checkout = () => {
                         rows={3}
                         placeholder="House-no,Street-no,Area,City,State,Pincode" required value={address}
                         onChange={handleAddressChange}
+                        style={{
+                          color: 'rgb(51, 51, 51)',
+                          backgroundColor: 'rgb(223, 219, 249)',
+                          border: '2px solid rgb(120, 30, 238)'
+                        }}
+                        
                       />
                     </Form.Group>
                   </Form>
@@ -135,7 +151,11 @@ const Checkout = () => {
              
               <Accordion.Item eventKey="2">
                 <Accordion.Header>Items and Delivery</Accordion.Header>
-                <Accordion.Body>
+                <Accordion.Body style={{
+            color: 'rgb(51, 51, 51)',
+            backgroundColor: '#01011b',
+            border: '2px solid rgb(120, 30, 238)'
+          }}>
                 <div className="cart-items">
                 {cart.map((cartItem, index) => (
                   <div className="cart-item" key={cartItem.id}>

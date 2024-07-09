@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { apiConnector } from "../services/apiconnector";
 import { paymentEndPoint } from "../services/apis";
 import { clearCart } from "../redux/Slices/cartSlice";
+import axios from "axios";
 
 
 const { PAYMENT_ORDER_API, PAYMENT_STATUS_API } = paymentEndPoint;
@@ -46,49 +47,42 @@ export default function PaymentForm() {
     transactionId: "T" + Date.now(),
   };
 
+  
+
   const handlePayment = async (e) => {
     e.preventDefault();
-    try {
-      const headers = {
-        Authorization: `Bearer ${token}`,
-      };
-      let res = await apiConnector("POST", PAYMENT_ORDER_API, data, {headers})
-        .then((res) => {
-          console.log(res.data);
-          if (res.data.success === true) {
-            window.location.href =res.data.data.instrumentResponse.redirectInfo.url;
-            navigate('/');
-            dispatch(clearCart());
-             // Make a GET request to PAYMENT_STATUS_API after redirect
-            const paymentStatusUrl = `${PAYMENT_STATUS_API}?id=${res.data.data.transactionId}`;
-            axios.get(paymentStatusUrl)
-              .then((response) => {
-                console.log(response.data);
-                if (response.data.success === true) {
-                  navigate('/success');
-                dispatch(clearCart()); // Clear the cart on successful payment
-                toast.success("Payment successful");
-                } else {
-                  navigate('/fail');
-                toast.error("Payment failed");
-                }
-              })
-              .catch((error) => {
-                console.log(error);
-              });
-          }
-          else{
-            toast.error("Payment Failed");
-          }
-         
+    const headers = {
+      Authorization: `Bearer ${token}`,
+    };
+    let res = await apiConnector("POST",PAYMENT_ORDER_API,data,{headers})
+    .then(res => {
+
+        console.log(res)
+        if (res.data && res.data.data.instrumentResponse.redirectInfo.url) {
+            window.location.href = res.data.data.instrumentResponse.redirectInfo.url;
+        }
+
+        axios.get(PAYMENT_STATUS_API, {
+          params: {
+            id: res.data.data.transactionId,
+          },
         })
-        .catch((err) => {
-          console.log(err);
+          .then((response) => {
+            if (response.data.success === true) {
+              navigate("/api/v1/success", { replace: true });
+            } else {
+              navigate("/api/v1/fail", { replace: true });
+            }
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+    })
+        .catch(error => {
+            console.error(error);
         });
-    } catch (error) {
-      console.log(error);
-    }
-  };
+
+}
   return (
     <>
       <Card

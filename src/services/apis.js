@@ -16,6 +16,8 @@ export const contactusEndpoint = {
 export const paymentEndPoint = {
   PAYMENT_ORDER_API: BASE_URL + "/order",
   PAYMENT_STATUS_API: BASE_URL + "/status",
+  PAYMENT_SUCCESS_API: BASE_URL + "/success",
+  PAYMENT_FAIL_API: BASE_URL + "/fail",
 };
 
 //It's a constant that defines the root URL for all API endpoints. In this case, it's http://localhost:4000/api/v1, which means that all API endpoints will start with this URL.

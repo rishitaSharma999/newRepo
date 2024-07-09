@@ -44,8 +44,8 @@ function ForgotPassword() {
                   style={{
                     fontSize: "36px",
                     fontWeight: "bold",
-                    color: "rgb(28 46 52);",
-                    textShadow: "2px 2px 4px #ccccff",
+                    color: "#b490ca",
+                    
                   }}
                 >
                   {!emailSent ? "Reset your password" : "Check email"}
@@ -73,7 +73,7 @@ function ForgotPassword() {
                   </Form>
                 ) : (
                   <div>
-                    <p>
+                    <p style={{color:'white'}}>
                       Email sent! Check your inbox for password reset
                       instructions.
                     </p>

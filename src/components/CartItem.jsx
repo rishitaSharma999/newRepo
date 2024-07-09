@@ -19,10 +19,10 @@ const CartItem = ({ item }) => {
   return (
     <>
       <Figure>
-        <Figure.Image width={171} height={180} alt="171x180" src={item.image} />
+        <Figure.Image width={171} height={180} alt="171x180" style={{padding:'10px',border: "2px solid white"}} src={item.image} />
         <Figure.Caption>
-          <h1>{item.title}</h1>
-          <p>{item.description}</p>
+          <h1 style={{color:'white',}}>{item.title}</h1>
+          <p style={{color:'white',}}>{item.description}</p>
         </Figure.Caption>
         <Figure.Caption>
           <div className="container-self">

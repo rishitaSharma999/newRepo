@@ -23,7 +23,7 @@ export default function MyNavbar() {
   const { cart } = useSelector((state) => state);
   
   return (
-    <Navbar expand="md" className="navbar-dark py-3" style={{ color: "#ffffff" }}>
+    <Navbar expand="md" className="navbar-dark py-4" style={{ color: "#ffffff" }}>
       <Container>
         <NavLink to="/" className="text-white">
           

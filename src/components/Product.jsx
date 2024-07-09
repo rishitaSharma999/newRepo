@@ -56,6 +56,7 @@ const Product = ({ product }) => {
           display: "flex",
           justifyContent: "center",
           position: "relative",
+          
         }}
       >
         {" "}
@@ -65,9 +66,10 @@ const Product = ({ product }) => {
             height: "70%",
             width: "60%",
             padding: "8px",
+            
           }}
         >
-          <img src={product.image} alt="Product Image" className="img-fluid" />
+          <img src={product.image} alt="Product Image" className="img-fluid"  />
         </div>
       </div>
 
