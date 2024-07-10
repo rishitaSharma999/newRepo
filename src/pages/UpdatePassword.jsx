@@ -41,16 +41,16 @@ function UpdatePassword() {
         <Spinner />
       ) : (
         <div className="max-w-[500px] p-8">
-          <h1 className="text-[1.875rem] font-semibold leading-[2.375rem] text-emerald-300 text-center">
-            Choose new password
-          </h1>
-          <p className="my-4 text-[1.125rem] leading-[1.625rem] text-emerald-200">
+          <h1 className="text-[1.875rem] font-semibold leading-[2.375rem] text-white text-center">
+  Choose new password
+</h1>
+          <p className="my-4 text-[1.125rem] leading-[1.625rem] text-white">
             Almost done. Enter your new password and youre all set.
           </p>
           <form onSubmit={handleOnSubmit}>
             <label className="relative">
-              <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-emerald-200">
-                New Password <sup className="text-pink-200">*</sup>
+              <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-white">
+                New Password <sup className="text-white">*</sup>
               </p>
               <input
                 required
@@ -59,7 +59,7 @@ function UpdatePassword() {
                 value={password}
                 onChange={handleOnChange}
                 placeholder="Enter Password"
-                className="w-full rounded-[0.5rem] bg-blue-700 p-[12px] pr-10 text-emerald-200 "
+                className="w-full rounded-[0.5rem] bg-blue-700 p-[12px] pr-10 text-white "
               />
               <span
                 onClick={() => setShowPassword((prev) => !prev)}
@@ -73,8 +73,8 @@ function UpdatePassword() {
               </span>
             </label>
             <label className="relative mt-3 block">
-              <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-emerald-200">
-                Confirm New Password <sup className="text-pink-200">*</sup>
+              <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-white">
+                Confirm New Password <sup className="text-white">*</sup>
               </p>
               <input
                 required
@@ -83,7 +83,7 @@ function UpdatePassword() {
                 value={confirmPassword}
                 onChange={handleOnChange}
                 placeholder="Confirm Password"
-                className="w-full rounded-[0.5rem] bg-blue-700 p-[12px] pr-10 text-emerald-200"
+                className="w-full rounded-[0.5rem] bg-blue-700 p-[12px] pr-10 text-white"
               />
               <span
                 onClick={() => setShowConfirmPassword((prev) => !prev)}
