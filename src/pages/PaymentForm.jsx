@@ -50,39 +50,28 @@ export default function PaymentForm() {
   
 
   const handlePayment = async (e) => {
+    
     e.preventDefault();
     const headers = {
       Authorization: `Bearer ${token}`,
     };
-    let res = await apiConnector("POST",PAYMENT_ORDER_API,data,{headers})
-    .then(res => {
-
-        console.log(res)
-        if (res.data && res.data.data.instrumentResponse.redirectInfo.url) {
-            window.location.href = res.data.data.instrumentResponse.redirectInfo.url;
-        }
-
-        axios.get(PAYMENT_STATUS_API, {
-          params: {
-            id: res.data.data.transactionId,
-          },
-        })
-          .then((response) => {
-            if (response.data.success === true) {
-              navigate("/api/v1/success", { replace: true });
-            } else {
-              navigate("/api/v1/fail", { replace: true });
-            }
-          })
-          .catch((error) => {
-            console.error(error);
-          });
-    })
-        .catch(error => {
-            console.error(error);
-        });
-
-}
+    try {
+      let res = await apiConnector("POST", PAYMENT_ORDER_API, data, { headers });
+      if (res.data && res.data.data.instrumentResponse.redirectInfo.url) {
+        window.location.href = res.data.data.instrumentResponse.redirectInfo.url;
+      }
+      let response = await apiConnector("GET", PAYMENT_STATUS_API, {}, { headers });
+      console.log(response);
+      if (response.data.success === true) {
+        window.location.href = '/success';
+      } else {
+        window.location.href = '/fail';
+      }
+    } catch (error) {
+      console.error(error);
+      navigate("/api/v1/fail", { replace: true });
+    }
+  };
   return (
     <>
       <Card

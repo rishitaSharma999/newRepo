@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Button from 'react-bootstrap/Button'
+import Button from "react-bootstrap/Button";
 import Spinner from "../components/Spinner";
 
 function VerifyEmail() {
@@ -67,7 +67,7 @@ function VerifyEmail() {
                 >
                   Verify Email
                 </h1>
-                <p className="text-[1.125rem] leading-[1.625rem] my-4 text-emerald-200">
+                <p className="text-[1.125rem] leading-[1.625rem] my-4 text-white">
                   A verification code has been sent to you. Enter the code below
                 </p>
                 <form onSubmit={handleVerifyAndSignup}>
@@ -80,12 +80,11 @@ function VerifyEmail() {
                         {...props}
                         placeholder="-"
                         style={{
-                          width:"10%",
+                          width: "10%",
                           borderRadius: "0.5rem",
                           textAlign: "center",
                           outline: "2px solid #ccccff",
-                          marginBottom:"25px",
-
+                          marginBottom: "25px",
                         }}
                         className=" border-0 bg-blue-600 rounded-[0.5rem]  text-pink-200 aspect-square text-center "
                       />
@@ -98,40 +97,37 @@ function VerifyEmail() {
                   <Row>
                     <Col>
                       {" "}
-                      
                       <Button
-                 type="submit"
-                  variant="success"
-                  className="button-success"
-                  style={{marginTop:"20px",marginBottom:"20px",}}
-                >
-                  Verify Email
-                  </Button>
+                        type="submit"
+                        variant="success"
+                        className="button-success"
+                        style={{ marginTop: "20px", marginBottom: "20px" }}
+                      >
+                        Verify Email
+                      </Button>
                     </Col>
                   </Row>
                 </form>
                 <Row>
                   <Col>
-                  <Link to="/signup">
-                    <p className="text-blue-100 flex items-center gap-x-2">
-                      <BiArrowBack /> Back To Signup
-                    </p>
-                  </Link>
-              
+                    <Link to="/signup">
+                      <p className="text-blue-100 flex items-center gap-x-2">
+                        <BiArrowBack /> Back To Signup
+                      </p>
+                    </Link>
 
-                  <Button
-                 type="submit"
-                  variant="success"
-                  className="button-success"
-                  onClick={() => dispatch(sendOtp(signupData.email))}
-                >
-                  <RxCountdownTimer />
-                    Resend it
-                  </Button>
-                  
+                    <Button
+                      type="submit"
+                      variant="success"
+                      className="button-success"
+                      onClick={() => dispatch(sendOtp(signupData.email))}
+                    >
+                      <RxCountdownTimer />
+                      Resend it
+                    </Button>
                   </Col>
                 </Row>
-                </div>
+              </div>
             </Col>
           </Row>
         </Container>

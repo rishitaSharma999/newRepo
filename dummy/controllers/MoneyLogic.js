@@ -16,7 +16,7 @@ exports.paymentController1 = async (req, res) => {
             merchantTransactionId: merchantTransactionId,
             name: req.body.name,
             amount: req.body.amount * 100,
-            redirectUrl: `http://localhost:4000/api/v1/status?id=${merchantTransactionId}`,
+            redirectUrl: `https://newrepo-o3pp.onrender.com/api/v1/status?id=${merchantTransactionId}`,
             redirectMode: "POST",
             mobileNumber: req.body.phone,
             paymentInstrument: {
@@ -95,12 +95,16 @@ exports.paymentController2 = async (req, res) => {
     }
 
 
-    return axios.request(options)
-   .then(function (response) {
+     axios.request(options)
+   .then(async (response)=> {
       if (response.data.success === true) {
-        return res.json({ message: "Payment successful" });
+        //return res.json({ message: "Payment successful",status: true });
+        const url = `https://new-repo-front.vercel.app/success`
+        return res.redirect(url)
       } else {
-        return res.json({ message: "Payment failed" });
+        //return res.json({ message: "Payment failed",status: false });
+        const url = `https://new-repo-front.vercel.app/failure`
+        return res.redirect(url)
       }
     })
    .catch(function (error) {
