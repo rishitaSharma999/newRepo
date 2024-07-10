@@ -59,7 +59,7 @@ function VerifyEmail() {
                   style={{
                     fontSize: "36px",
                     fontWeight: "bold",
-                    color: "rgb(28 46 52)",
+                    color: "white",
                     textShadow: "2px 2px 4px #ccccff",
                     textAlign: "center",
                     marginTop: "20px",

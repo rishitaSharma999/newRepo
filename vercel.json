@@ -1,0 +1,61 @@
+{
+    "version": 2,
+    "routes": [
+      {
+        "src": "/",
+        "dest": "index.html"
+      },
+      {
+        "src": "/cart",
+        "dest": "index.html"
+      },
+      {
+        "src": "/checkout",
+        "dest": "index.html"
+      },
+      {
+        "src": "/contact",
+        "dest": "index.html"
+      },
+      {
+        "src": "/login",
+        "dest": "index.html"
+      },
+      {
+        "src": "/signup",
+        "dest": "index.html"
+      },
+      {
+        "src": "/verify-email",
+        "dest": "index.html"
+      },
+      {
+        "src": "/forgot-password",
+        "dest": "index.html"
+      },
+      {
+        "src": "/update-password/:id",
+        "dest": "index.html"
+      },
+      {
+        "src": "/logout",
+        "dest": "index.html"
+      },
+      {
+        "src": "/item/:id",
+        "dest": "index.html"
+      },
+      {
+        "src": "/payment",
+        "dest": "index.html"
+      },
+      {
+        "src": "/success",
+        "dest": "index.html"
+      },
+      {
+        "src": "/fail",
+        "dest": "index.html"
+      }
+    ]
+  }
