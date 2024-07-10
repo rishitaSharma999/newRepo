@@ -59,6 +59,7 @@ export default function PaymentForm() {
       let res = await apiConnector("POST", PAYMENT_ORDER_API, data, { headers });
       if (res.data && res.data.data.instrumentResponse.redirectInfo.url) {
         window.location.href = res.data.data.instrumentResponse.redirectInfo.url;
+        dispatch(clearCart());
       }
       let response = await apiConnector("GET", PAYMENT_STATUS_API, {}, { headers });
       console.log(response);
