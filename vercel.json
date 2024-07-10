@@ -43,8 +43,8 @@
       },
       {
         "src": "/item/:id",
-        "dest": "index.html",
-         "fallback": "index.html"
+        "dest": "index.html"
+        
       },
       {
         "src": "/payment",
