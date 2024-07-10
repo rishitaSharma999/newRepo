@@ -43,7 +43,8 @@
       },
       {
         "src": "/item/:id",
-        "dest": "index.html"
+        "dest": "index.html",
+         "fallback": "index.html"
         
       },
       {
